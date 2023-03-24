@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style>
+main {
+  display: flex;
+}
+
+main > * {
+  flex: 1;
+}
+</style>
+</head>
+<body>
+  <h1>Odds and Evens</h1>
+  <form>
+    <input />
+    <button>+</button>
+  </form>
+  <main>
+    <div>
+  <h2>Odds</h2>
+  <ul id='odd'></ul>
+    </div>
+    <div>
+  <h2>Evens</h2>
+  <ul id='even'></ul>
+    </div>
+  </main>
+  <script>
+let numbers = [1, 2, 3, 4];
+const main = document.querySelector('main');
+const form = document.querySelector('form');
+form.addEventListener('submit', ev => {
+  ev.preventDefault();
+  const value = form.querySelector('input').value;
+  numbers.push(value * 1);
+  render();
+});
+
+main.addEventListener('click', ev => {
+  const target = ev.target;
+  if(target.tagName === 'LI'){
+    numbers = numbers.filter( n => n !== target.innerHTML*1);
+    render();
+    
+  }
+});
+
+
+const render = ()=> {
+  const odds = numbers.filter(i => i % 2);
+  const evens = numbers.filter(i => i % 2 === 0);
+  let html = odds.map(number => {
+    return `<li>${ number}</li>`;
+  }).join('');
+  document.querySelector('#odd').innerHTML = html;
+  html = evens.map(number => {
+    return `<li>${ number}</li>`;
+  }).join('');
+    document.querySelector('#even').innerHTML = html;
+};
+
+render();
+
+  </script>
+
+</body>
+</html>
+

@@ -62,8 +62,8 @@ const render = ()=> {
 render();
 
 const interval = setInterval(()=> {
-  const color = ['red', 'green'][Math.round(Math.random())]
-  const size = ['sm', 'md', 'lg'][Math.round(Math.random())]
+  const color = ['red', 'green'][Math.floor(Math.random() * 2)]
+  const size = ['sm', 'md', 'lg'][Math.floor(Math.random() * 3)]
   shapes.push({ color, size })
   render();
   if(shapes.length === 10){

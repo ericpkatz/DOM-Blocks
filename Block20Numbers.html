@@ -39,7 +39,7 @@ const render = ()=> {
         return `<li style='font-size: ${num}px' class='${num % 2 ? 'odd': 'even'}'>${ num }</li>`;
   }).join('');
   document.querySelector('ul').innerHTML = html;
-  document.querySelector('h1').innerHTML = count;
+  document.querySelector('h1').innerText = count;
 };
 
 setInterval(()=> {

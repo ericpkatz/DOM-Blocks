@@ -1,0 +1,12 @@
+- forms
+  - select
+  - input
+  - button
+- document.addEventListener
+- preventDefault() 
+- DOM traversal
+  - parentNode
+  - children
+  - spread
+- Array.splice
+- Array.filter

@@ -1,0 +1,13 @@
+- document.querySelector
+- document.innerHTML
+- document.innerText
+- template literals
+- objects
+- Math.random()
+- Math.round()
+- Math.floor()
+- setInterval - callback functions
+- clearInterval
+- array methods
+  - map
+  - join

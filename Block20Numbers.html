@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Block 20 Numbers</title>
+<style>
+ul {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+li {
+  margin: 1rem;
+}
+.even {
+  color: dodgerBlue;
+}
+.odd {
+  color: tomato;
+}
+</style>
+</head>
+<body>
+  <h1></h1>
+  <ul>
+  </ul>
+
+  <script>
+
+    const numbers = [
+      12,
+      15,
+      9
+    ];
+
+const render = ()=> {
+  let count = 0;
+  const html = numbers.map( num => {
+        count += num;
+        return `<li style='font-size: ${num}px' class='${num % 2 ? 'odd': 'even'}'>${ num }</li>`;
+  }).join('');
+  document.querySelector('ul').innerHTML = html;
+  document.querySelector('h1').innerHTML = count;
+};
+
+setInterval(()=> {
+      numbers.push(Math.round(6 + Math.random() * 100))
+      render();
+}, 1000);
+
+render();
+
+  </script>
+
+</body>
+</html>

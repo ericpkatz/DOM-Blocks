@@ -54,7 +54,7 @@ const shapes = [
 
 const render = ()=> {
   const html = shapes.map( shape => {
-    return `<div class='${shape.color} ${shape.size}'></div>`;
+    return `<li class='${shape.color} ${shape.size}'></li>`;
   }).join('');
   document.querySelector('ul').innerHTML = html;
 };

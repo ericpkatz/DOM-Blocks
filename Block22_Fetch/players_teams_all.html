@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>Block 22 - Players Teams All</title>
+  <style>
+  main {
+    display: flex;
+  }
+  main > * {
+    flex: 1
+  }
+  </style>
+  </head>
+  <body>
+    <main>
+      <div>
+        <h2>Players</h2>
+        <ul id='playerList'>
+        </ul>
+      </div>
+      <div>
+        <h2>Teams</h2>
+        <ul id='teamList'>
+        </ul>
+      </div>
+    </main>
+
+    <script>
+  let players;
+  let teams;
+
+  const fetchPlayers = async()=> {
+    const response = await fetch('https://fsa-puppy-bowl.herokuapp.com/api/MY_COHORT/players');
+    const json = await response.json();
+    return json.data.players;
+  };
+
+  const fetchTeams = async()=> {
+    const response = await fetch('https://fsa-puppy-bowl.herokuapp.com/api/MY_COHORT/teams');
+    const json = await response.json();
+    return json.data.teams;
+  };
+
+  const renderPlayers = ()=> {
+    const html = players.map( player => {
+      return `<li>
+        ${player.name}
+      </li>`;
+    }).join('');
+    document.querySelector('ul#playerList').innerHTML = html;
+  };
+
+  const renderTeams = ()=> {
+    const html = teams.map( team => {
+      return `<li>
+        ${team.name}
+      </li>`;
+    }).join('');
+    document.querySelector('ul#teamList').innerHTML = html;
+  };
+
+  const setup = async()=> {
+    try {
+      const responses = await Promise.all([
+        fetchPlayers(),
+        fetchTeams()
+      ]);
+      players = responses[0];
+      teams = responses[1];
+      renderPlayers();
+      renderTeams();
+    }
+    catch(ex){
+      console.log(ex);
+    }
+  };
+  setup();
+
+    </script>
+
+  </body>
+</html>

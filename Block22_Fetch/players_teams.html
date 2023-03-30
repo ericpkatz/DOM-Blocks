@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>Block 22 - Players Teams</title>
+  <style>
+  main {
+    display: flex;
+  }
+  main > * {
+    flex: 1
+  }
+  </style>
+  </head>
+  <body>
+    <main>
+      <div>
+        <h2>Players</h2>
+        <ul id='playerList'>
+        </ul>
+      </div>
+      <div>
+        <h2>Teams</h2>
+        <ul id='teamList'>
+        </ul>
+      </div>
+    </main>
+
+    <script>
+  let players;
+  let teams;
+
+  const fetchPlayers = async()=> {
+    try {
+      const response = await fetch('https://fsa-puppy-bowl.herokuapp.com/api/MY_COHORT/players');
+      const json = await response.json();
+      players = json.data.players;
+      renderPlayers();
+    }
+    catch(ex){
+      console.log(ex);
+    }
+  };
+
+  const fetchTeams = async()=> {
+    try {
+      const response = await fetch('https://fsa-puppy-bowl.herokuapp.com/api/MY_COHORT/teams');
+      const json = await response.json();
+      teams = json.data.teams;
+      renderTeams();
+    }
+    catch(ex){
+      console.log(ex);
+    }
+  };
+
+  const renderPlayers = ()=> {
+    const html = players.map( player => {
+      return `<li>
+        ${player.name}
+      </li>`;
+    }).join('');
+    document.querySelector('ul#playerList').innerHTML = html;
+  };
+
+  const renderTeams = ()=> {
+    const html = teams.map( team => {
+      return `<li>
+        ${team.name}
+      </li>`;
+    }).join('');
+    document.querySelector('ul#teamList').innerHTML = html;
+  };
+
+  fetchPlayers();
+  fetchTeams();
+    </script>
+
+  </body>
+</html>

@@ -12,5 +12,4 @@ User interfaces will be rendered from data which is fetched from another server 
 - the fetch API
 - async, await
 - promises
-- Promise.all
 

@@ -2,13 +2,15 @@
   <head>
     <title>Block 21 - Odds Evens</title>
     <style>
-    main {
-      display: flex;
-    }
+.odd {
+  color: tomato;
+}
 
-    main > * {
-      flex: 1;
-    }
+.even {
+  color: dodgerBlue;
+}
+
+
     </style>
   </head>
   <body>
@@ -17,46 +19,43 @@
       <input />
       <button>+</button>
     </form>
-    <main>
-      <div>
-    <h2>Odds</h2>
-    <ul id='odd'></ul>
-      </div>
-      <div>
-    <h2>Evens</h2>
-    <ul id='even'></ul>
-      </div>
-    </main>
+    <div>
+      <ul>
+      </ul>
+    </div>
     <script>
   let numbers = [1, 2, 3, 4];
-  const main = document.querySelector('main');
+  const ul = document.querySelector('ul');
   const form = document.querySelector('form');
   form.addEventListener('submit', ev => {
     ev.preventDefault();
     const value = form.querySelector('input').value;
     numbers.push(value * 1);
+    form.querySelector('input').value = '';
     render();
   });
 
-  main.addEventListener('click', ev => {
+  ul.addEventListener('click', ev => {
     const target = ev.target;
     if(target.tagName === 'LI'){
-      numbers = numbers.filter( n => n !== target.innerHTML*1);
+      const idx = [...target.parentNode.children].indexOf(target);
+      numbers.splice(idx, 1);
       render();
     }
   });
 
   const render = ()=> {
-    const odds = numbers.filter(i => i % 2);
-    const evens = numbers.filter(i => i % 2 === 0);
-    let html = odds.map(number => {
-      return `<li>${ number}</li>`;
+    let html = numbers.map(number => {
+      let className = '';
+      if(number % 2 === 1){
+        className = 'odd';
+      }
+      else if(number % 2 === 0){
+        className = 'even';
+      }
+      return `<li class='${ className}'>${ number}</li>`;
     }).join('');
-    document.querySelector('#odd').innerHTML = html;
-    html = evens.map(number => {
-      return `<li>${ number}</li>`;
-    }).join('');
-      document.querySelector('#even').innerHTML = html;
+    ul.innerHTML = html;
   };
 
   render();

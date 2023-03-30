@@ -4,6 +4,10 @@
   <style>
   .selected {
     font-weight: bold;
+    background-color: dodgerBlue;
+  }
+  .selected a {
+    color: cornSilk;
   }
   </style>
   </head>
@@ -32,7 +36,7 @@
     const id = window.location.hash.slice(1)*1;
     const html = players.map( player => {
       return `<li class='${id === player.id ? 'selected': ''}'>
-        <a href='#${player.id}'>${player.name}</a>
+        <a href='#${id === player.id ? '': player.id}'>${player.name}</a>
       </li>`;
     }).join('');
     document.querySelector('ul').innerHTML = html;
@@ -40,7 +44,7 @@
   };
 
   const renderDetails = ()=> {
-     const id = window.location.hash.slice(1)*1;
+    const id = window.location.hash.slice(1)*1;
     const player = players.find(player => player.id === id*1);
     const pre = document.querySelector('pre');
     pre.innerText = player ? JSON.stringify(player, null, 2): ''

@@ -22,6 +22,8 @@ User interfaces will change depending on underlying data. When the data changes,
 - Selection -> window.document.querySelector, window.document.querySelectorAll
 - Manipulation -> setting innerHTML or innerText
 - The data to UI paradigm
+- Some notes on Math.random()
+- Example picking a random property
 
 # Utilizes
 

@@ -24,6 +24,7 @@ User interfaces will change depending on underlying data. When the data changes,
 - The data to UI paradigm
 - Some notes on Math.random()
 - Example picking a random property
+- setInterval , clearInterval
 
 # Utilizes
 

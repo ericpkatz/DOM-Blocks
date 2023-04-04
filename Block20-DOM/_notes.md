@@ -6,6 +6,14 @@ Web developers need to be able to write programs which manipulate the user inter
 
 User interfaces will change depending on underlying data. When the data changes, the interface will be re-rendered.
 
+# Learning Objectives
+
+- Understanding the relationship between the user interface and JavaScript.
+- Understanding the data -> UI lifecycle
+- Being able to select DOM elements.
+- Modifying the DOM based on data using innerHTML and innerText
+- Create a webpage with changing data, where the user interface changes as a result of the data changing.
+
 # Slide Deck should include
 - HTML -> user interface for web applications
 - HTML + JavaScript -> user interface for dynamic web application 

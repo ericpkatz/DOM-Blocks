@@ -65,10 +65,6 @@
       render();
 
       document.querySelector('#vowelForm').addEventListener('submit', (ev)=> {
-        ev.preventDefault();
-        const letter = ev.target.querySelector('select').value;
-        letters.push(letter);
-        render();
       });
 
       document.querySelector('#consonantForm').addEventListener('submit', (ev)=> {

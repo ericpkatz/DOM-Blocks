@@ -28,6 +28,7 @@ The data, which determines the user interface, will change based on the selectio
 - User Event -> ie form submission -> data change -> render
 - Event Handlers - passed events -> can be used to find target 
 - Target -> can be used to traverse DOM
+- idx = [...ev.target.parentNode.children].indexOf(ev.target);
 - Node -> ev.target.querySelector allows us to find elements within the form (useful). Allows us to show that document or ev.target are both nodes.
 - Rendering - both classes and inline styles can be used (see oddsEvens.html)
 

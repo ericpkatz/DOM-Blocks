@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Block 20</title>
-<style>
-ul {
-  display: flex;
-  flex-wrap: wrap;
-}
-ul > div {
-  border: solid 1px black;
-  margin:1rem;
-}
+  <head>
+    <title>Block 20</title>
+    <style>
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      ul > div {
+        border: solid 1px black;
+        margin:1rem;
+      }
 
-.red {
-  background-color: red;
-}
+      .red {
+        background-color: red;
+      }
 
-.green {
-  background-color: green;
-}
+      .green {
+        background-color: green;
+      }
 
-.sm {
-  width: 25px;
-  height: 25px;
-}
+      .sm {
+        width: 25px;
+        height: 25px;
+      }
 
-.md {
-  width: 50px;
-  height: 50px;
-}
+      .md {
+        width: 50px;
+        height: 50px;
+      }
 
-.lg {
-  width: 75px;
-  height: 75px;
-}
-</style>
-</head>
-<body>
-  <ul>
-  </ul>
+      .lg {
+        width: 75px;
+        height: 75px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+    </ul>
 
-  <script>
-const shapes = [
-  {
-    color: 'red',
-    size: 'md'
-  },
-  {
-    color: 'green', 
-    size: 'lg'
-  }
-];
+    <script>
+      const squares = [
+        {
+          color: 'red',
+          size: 'md'
+        },
+        {
+          color: 'green', 
+          size: 'lg'
+        }
+      ];
 
-const render = ()=> {
-  const html = shapes.map( shape => {
-    return `<li class='${shape.color} ${shape.size}'></li>`;
-  }).join('');
-  document.querySelector('ul').innerHTML = html;
-};
+      const render = ()=> {
+        const html = squares.map( square => {
+          return `<div class='${square.color} ${square.size}'></div>`;
+        }).join('');
+        document.querySelector('ul').innerHTML = html;
+      };
 
-render();
+      render();
 
-const interval = setInterval(()=> {
-  const color = ['red', 'green'][Math.floor(Math.random() * 2)]
-  const size = ['sm', 'md', 'lg'][Math.floor(Math.random() * 3)]
-  shapes.push({ color, size })
-  render();
-  if(shapes.length === 10){
-    clearInterval(interval);
-  }
-  
-}, 1000);
-  </script>
+      const interval = setInterval(()=> {
+        const color = ['red', 'green'][Math.floor(Math.random() * 2)]
+        const size = ['sm', 'md', 'lg'][Math.floor(Math.random() * 3)]
+        squares.push({ color, size })
+        render();
+        if(squares.length === 10){
+          clearInterval(interval);
+        }
+        
+      }, 1000);
+    </script>
 
-</body>
+  </body>
 </html>

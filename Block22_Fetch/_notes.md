@@ -25,6 +25,8 @@ User interfaces will be rendered from data which is fetched from another server 
 - the idea that no matter how fast fetch is, the code after await will only occur after other code is called (this is the event loop, but not sure we need to call it the event loop)
 - fetch API -> data -> rendered UI
 - RESTFUL API's return data in different formats. If documentation exists, read it, if not, call it and see how the data is returned. 
+- RESTFUL API's and JSON data
+- JSON vs. objects
 
 # Utilizes
 

@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title>Block 22 - Products and Companies</title>
+    <style>
+      main {
+        display: flex;
+      }
+      main > * {
+        flex: 1
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div>
+        <h2>Companies</h2>
+        <ul id='companyList'>
+        </ul>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul id='productList'>
+        </ul>
+      </div>
+      <div>
+        <h2>States - Company Count</h2>
+        <ul id='statesList'>
+        </ul>
+      </div>
+    </main>
+
+    <script>
+      let products;
+      let companies;
+
+      const fetchProducts = async()=> {
+        try {
+          const response = await fetch('https://www.acme-api.com/api/products');
+          const json = await response.json();
+          products = json;
+          renderProducts();
+        }
+        catch(ex){
+          console.log(ex);
+        }
+      };
+
+      const fetchCompanies = async()=> {
+        try {
+          const response = await fetch('https://www.acme-api.com/api/companies');
+          const json = await response.json();
+          companies = json;
+          renderCompanies();
+        }
+        catch(ex){
+          console.log(ex);
+        }
+      };
+
+      const renderProducts = ()=> {
+        const html = products.map(product => {
+          return `<li>
+            ${product.name} - ${product.suggestedPrice}</br>
+            ${product.description}
+          </li>`;
+        }).join('');
+        document.querySelector('ul#productList').innerHTML = html;
+      };
+
+      const renderCompanies = ()=> {
+        const html = companies.map(company => {
+          return `<li>
+            ${company.name}</br>
+            ${company.catchPhrase}
+          </li>`;
+        }).join('');
+        document.querySelector('ul#companyList').innerHTML = html;
+
+        const statesObj = companies.reduce((acc, company) => {
+          if(acc[company.state]) {
+            acc[company.state] += 1;
+          } else {
+            acc[company.state] = 1;
+          }
+          return acc;
+        }, {});
+
+        const statesHtml = Object.keys(statesObj).map(state => {
+          return `
+            <li>
+              ${state} - ${statesObj[state]}
+            </li>
+          `
+        }).join('');
+        document.querySelector('ul#statesList').innerHTML = statesHtml;
+      
+      };
+
+      fetchProducts();
+      fetchCompanies();
+    </script>
+  </body>
+</html>

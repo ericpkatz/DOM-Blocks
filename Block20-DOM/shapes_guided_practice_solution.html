@@ -20,6 +20,10 @@
         background-color: green;
       }
 
+      .yellow { 
+        background-color: yellow;
+      }
+
       .sm {
         width: 25px;
         height: 25px;
@@ -34,14 +38,37 @@
         width: 75px;
         height: 75px;
       }
+
+      .xl {
+        width: 100px;
+        height: 100px;
+      }
+
+      .circle {
+        border-radius: 50%
+      }
     </style>
   </head>
   <body>
     <ul>
     </ul>
 
+    <ul id="circles">
+    </ul>
+
     <script>
       const squares = [
+        {
+          color: 'red',
+          size: 'md'
+        },
+        {
+          color: 'green', 
+          size: 'lg'
+        }
+      ];
+
+      const circles = [
         {
           color: 'red',
           size: 'md'
@@ -57,16 +84,22 @@
           return `<div class='${square.color} ${square.size}'></div>`;
         }).join('');
         document.querySelector('ul').innerHTML = html;
+
+        const circleHtml = circles.map(circle => {
+          return `<div class='${circle.color} ${circle.size} circle'></div>`;
+        }).join('');
+        document.querySelector('#circles').innerHTML = circleHtml;
       };
 
       render();
 
       const interval = setInterval(()=> {
-        const color = ['red', 'green'][Math.floor(Math.random() * 2)]
-        const size = ['sm', 'md', 'lg'][Math.floor(Math.random() * 3)]
-        squares.push({ color, size })
+        const color = ['red', 'green', 'yellow'][Math.floor(Math.random() * 3)];
+        const size = ['sm', 'md', 'lg', 'xl'][Math.floor(Math.random() * 4)];
+        squares.push({ color, size });
+        circles.push({color, size});
         render();
-        if(squares.length === 10){
+        if(squares.length === 25){
           clearInterval(interval);
         }
         
@@ -74,8 +107,4 @@
     </script>
 
   </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> b5a6cd3587a62eb87e7fb48a954d3aaf22d30b3f

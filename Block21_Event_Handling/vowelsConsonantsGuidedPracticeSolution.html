@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>Block 21 - Vowels Consonants</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <h1>Vowels Consonants</h1>
+    <div>
+      <h2>Choose A Vowel</h2>
+      <form id='vowelForm'>
+        <select>
+          <option>a</option>
+          <option>e</option>
+          <option>i</option>
+          <option>o</option>
+          <option>u</option>
+          <option>y</option>
+        </select>
+        <button>+</button>
+      </form>
+    </div>
+    <div>
+      <h2>Choose A Consonant</h2>
+      <form id='consonantForm'>
+        <select>
+          <option>b</option>
+          <option>c</option>
+          <option>d</option>
+          <option>f</option>
+          <option>g</option>
+          <option>h</option>
+          <option>j</option>
+          <option>k</option>
+          <option>l</option>
+          <option>m</option>
+          <option>n</option>
+          <option>p</option>
+          <option>r</option>
+          <option>s</option>
+          <option>t</option>
+          <option>v</option>
+          <option>w</option>
+          <option>x</option>
+          <option>y</option>
+          <option>z</option>
+        </select>
+        <button>+</button>
+      </form>
+    </div>
+    <h1 id='output'></h1>
+    <h2 id="count">Vowels: 1 Consonants: 2</h2>
+    <script>
+      let letters = [
+        {
+          letter: 'a',
+          isVowel: true
+        },
+        {
+          letter: 'b',
+          isVowel: false
+        },
+        {
+          letter: 'c',
+          isVowel: false
+        },
+      ];
+      let vowelCount = 1;
+      let consonantCount = 2;
+
+      const render = ()=> {
+        const html = letters.map( letter => {
+          let letterType = 'consonant';
+          if(letter.isVowel) {
+            letterType = 'vowel';
+          }
+          return `
+            <span class=${letterType}>
+              ${ letter.letter.toUpperCase() }
+            </span>
+          `;
+        }).join('');
+        document.querySelector('#output').innerHTML = html; 
+      };
+
+      renderCount = () => {
+        const html = `Vowels: ${vowelCount} Consonants: ${consonantCount}`;
+        document.querySelector('#count').innerHTML = html;
+      }
+
+      render();
+
+      document.querySelector('#vowelForm').addEventListener('submit', (ev)=> {
+        ev.preventDefault();
+        const letter = ev.target.querySelector('select').value;
+        letters.push({letter, isVowel: true});
+        vowelCount++;
+        render();
+        renderCount();
+      });
+
+      document.querySelector('#consonantForm').addEventListener('submit', (ev)=> {
+        ev.preventDefault();
+        const letter = ev.target.querySelector('select').value;
+        letters.push({letter, isVowel: false});
+        consonantCount++;
+        render();
+        renderCount();
+      });
+
+      document.querySelector('#output').addEventListener('click', (ev) => {
+        if(ev.target.tagName === 'SPAN'){
+          if(event.target.classList[0] === 'consonant') {
+            consonantCount--;
+          } else {
+            vowelCount--;
+          }
+          
+          const idx = [...ev.target.parentNode.children].indexOf(ev.target);
+          letters.splice(idx, 1);
+          render();
+          renderCount();
+        }
+      });
+    </script>
+  </body>
+</html>
+

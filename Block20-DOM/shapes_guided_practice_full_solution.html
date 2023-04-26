@@ -57,18 +57,7 @@
     </ul>
 
     <script>
-      const squares = [
-        {
-          color: 'red',
-          size: 'md'
-        },
-        {
-          color: 'green', 
-          size: 'lg'
-        }
-      ];
-
-      const circles = [
+      const shapes = [
         {
           color: 'red',
           size: 'md'
@@ -80,12 +69,12 @@
       ];
 
       const render = ()=> {
-        const html = squares.map( square => {
+        const html = shapes.map(square => {
           return `<div class='${square.color} ${square.size}'></div>`;
         }).join('');
         document.querySelector('ul').innerHTML = html;
 
-        const circleHtml = circles.map(circle => {
+        const circleHtml = shapes.map(circle => {
           return `<div class='${circle.color} ${circle.size} circle'></div>`;
         }).join('');
         document.querySelector('#circles').innerHTML = circleHtml;
@@ -96,10 +85,9 @@
       const interval = setInterval(()=> {
         const color = ['red', 'green', 'yellow'][Math.floor(Math.random() * 3)];
         const size = ['sm', 'md', 'lg', 'xl'][Math.floor(Math.random() * 4)];
-        squares.push({ color, size });
-        circles.push({color, size});
+        shapes.push({ color, size });
         render();
-        if(squares.length === 50){
+        if(shapes.length === 50){
           clearInterval(interval);
         }
         

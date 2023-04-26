@@ -41,7 +41,7 @@
     </ul>
 
     <script>
-      const squares = [
+      const shapes = [
         {
           color: 'red',
           size: 'md'
@@ -53,7 +53,7 @@
       ];
 
       const render = ()=> {
-        const html = squares.map( square => {
+        const html = shapes.map(square => {
           return `<div class='${square.color} ${square.size}'></div>`;
         }).join('');
         document.querySelector('ul').innerHTML = html;
@@ -64,9 +64,9 @@
       const interval = setInterval(()=> {
         const color = ['red', 'green'][Math.floor(Math.random() * 2)];
         const size = ['sm', 'md', 'lg'][Math.floor(Math.random() * 3)];
-        squares.push({ color, size });
+        shapes.push({ color, size });
         render();
-        if(squares.length === 10){
+        if(shapes.length === 10){
           clearInterval(interval);
         }
         

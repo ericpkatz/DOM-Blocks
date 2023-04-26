@@ -17,26 +17,11 @@
 ```
 
 ```javascript
-  // add the following code after the squares array
-  const circles = [
-    {
-      color: 'red',
-      size: 'md'
-    },
-    {
-      color: 'green', 
-      size: 'lg'
-    }
-  ];
-
   // update the render function to include the following code
   const circleHtml = circles.map(circle => {
     return `<div class='${circle.color} ${circle.size} circle'></div>`;
   }).join('');
   document.querySelector('#circles').innerHTML = circleHtml;
-
-  // update the setInterval to include the following code after the squares.push
-  circles.push({color, size});
 ```
 
 ```css
@@ -66,7 +51,7 @@
   /* add the following style rule below the .lg style rule */
   .xl {
     width: 100px;
-        height: 100px;;
+    height: 100px;;
   }
 ```
 

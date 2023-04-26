@@ -51,6 +51,7 @@
           const json = await response.json();
           companies = json;
           renderCompanies();
+          renderStates();
         }
         catch(ex){
           console.log(ex);
@@ -75,13 +76,11 @@
           </li>`;
         }).join('');
         document.querySelector('ul#companyList').innerHTML = html;
+      };
 
+      const renderStates = () => {
         const statesObj = companies.reduce((acc, company) => {
-          if(acc[company.state]) {
-            acc[company.state] += 1;
-          } else {
-            acc[company.state] = 1;
-          }
+          acc[company.state] ? acc[company.state] += 1 : acc[company.state] = 1;
           return acc;
         }, {});
 
@@ -93,8 +92,7 @@
           `
         }).join('');
         document.querySelector('ul#statesList').innerHTML = statesHtml;
-      
-      };
+      }
 
       fetchProducts();
       fetchCompanies();

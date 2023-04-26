@@ -62,9 +62,9 @@
       render();
 
       const interval = setInterval(()=> {
-        const color = ['red', 'green'][Math.floor(Math.random() * 2)]
-        const size = ['sm', 'md', 'lg'][Math.floor(Math.random() * 3)]
-        squares.push({ color, size })
+        const color = ['red', 'green'][Math.floor(Math.random() * 2)];
+        const size = ['sm', 'md', 'lg'][Math.floor(Math.random() * 3)];
+        squares.push({ color, size });
         render();
         if(squares.length === 10){
           clearInterval(interval);
@@ -74,8 +74,4 @@
     </script>
 
   </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> b5a6cd3587a62eb87e7fb48a954d3aaf22d30b3f

@@ -53,15 +53,15 @@
     <script>
       let letters = [
         {
-          letter: 'a',
+          character: 'a',
           isVowel: true
         },
         {
-          letter: 'b',
+          character: 'b',
           isVowel: false
         },
         {
-          letter: 'c',
+          character: 'c',
           isVowel: false
         },
       ];
@@ -70,56 +70,45 @@
 
       const render = ()=> {
         const html = letters.map( letter => {
-          let letterType = 'consonant';
-          if(letter.isVowel) {
-            letterType = 'vowel';
-          }
+          const letterType = letter.isVowel ? 'vowel' : 'consonant';
+
           return `
             <span class=${letterType}>
-              ${ letter.letter.toUpperCase() }
+              ${ letter.character.toUpperCase() }
             </span>
           `;
         }).join('');
         document.querySelector('#output').innerHTML = html; 
-      };
 
-      renderCount = () => {
-        const html = `Vowels: ${vowelCount} Consonants: ${consonantCount}`;
-        document.querySelector('#count').innerHTML = html;
-      }
+        const countHtml = `Vowels: ${vowelCount} Consonants: ${consonantCount}`;
+        document.querySelector('#count').innerHTML = countHtml;
+      };
 
       render();
 
       document.querySelector('#vowelForm').addEventListener('submit', (ev)=> {
         ev.preventDefault();
         const letter = ev.target.querySelector('select').value;
-        letters.push({letter, isVowel: true});
+        letters.push({character: letter, isVowel: true});
         vowelCount++;
         render();
-        renderCount();
       });
 
       document.querySelector('#consonantForm').addEventListener('submit', (ev)=> {
         ev.preventDefault();
         const letter = ev.target.querySelector('select').value;
-        letters.push({letter, isVowel: false});
+        letters.push({character: letter, isVowel: false});
         consonantCount++;
         render();
-        renderCount();
       });
 
       document.querySelector('#output').addEventListener('click', (ev) => {
         if(ev.target.tagName === 'SPAN'){
-          if(event.target.classList[0] === 'consonant') {
-            consonantCount--;
-          } else {
-            vowelCount--;
-          }
+          event.target.classList[0] === 'consonant' ? consonantCount-- : vowelCount--;
           
           const idx = [...ev.target.parentNode.children].indexOf(ev.target);
           letters.splice(idx, 1);
           render();
-          renderCount();
         }
       });
     </script>

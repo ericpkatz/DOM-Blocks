@@ -1,0 +1,132 @@
+<html>
+  <head>
+    <script>
+      const removeLongKeys = (obj)=> {
+        for(let key in obj){
+          if(key.length > 3){
+            delete obj[key];
+          }
+        }
+      };
+      const turnArrayToObject = (arr)=> {
+        const obj = {};
+        for(let i = 0; i < arr.length; i = i + 2){
+          obj[arr[i]] = arr[i + 1];
+        }
+        return obj;
+      };
+      const turnObjectToArray = (obj)=> {
+        const arr = [];
+        for(let key in obj){
+          arr.push(key);
+          arr.push(obj[key]);
+        }
+        return arr;
+      };
+
+      const letterMap = (txt)=> {
+        const results = {};
+        for(let i = 0; i < txt.length; i++){
+          const letter = txt[i];
+          if(results[letter] === undefined){
+            results[letter] = 0;
+          }
+          results[letter] = results[letter] + 1;
+        }
+        return results;
+      };
+
+      const tailsCount = (arr)=> {
+        let count = 0;
+        for(let i = 0; i < arr.length; i++){
+          if(arr[i] === 'tails'){
+            count++;
+          }
+        }
+        return count;
+      };
+
+      const headsCount = (arr)=> {
+        let count = 0;
+        for(let i = 0; i < arr.length; i++){
+          if(arr[i] === 'heads'){
+            count++;
+          }
+        }
+        return count;
+      };
+
+      const coinTosses = (count) => {
+        const arr = [];
+        for(let i = 0; i < count; i++){
+          const rnd = Math.round(Math.random());
+          arr.push(rnd === 1 ? 'heads': 'tails');
+        }
+        return arr;
+      };
+
+      const generateArray = (count)=> {
+        const arr = [];
+        for(let i = 0; i < count; i++){
+          arr.push(i);
+        }
+        return arr;
+      };
+      const generateArrayOfObjects = (count)=> {
+        const arr = [];
+        for(let i = 0; i < count; i++){
+          arr.push({ index: i });
+        }
+        return arr;
+      };
+      const arr = [1, 2, 3];
+      for(let i = 0; i < arr.length; i++){
+        console.log(arr[i]);
+      }
+
+      const obj = {
+        foo: 'bar',
+        bazz: 42,
+        quq: true
+      };
+      console.log(obj.foo);
+      const key = 'quq';
+      console.log(obj[key]);
+      console.log(Object.keys(obj));
+      console.log(Object.values(obj));
+      console.log(Object.entries(obj));
+
+      for(let key in obj){
+        console.log(key, obj[key]);
+      }
+
+      console.log(generateArray(10));
+      console.log(generateArray(20));
+      console.log(generateArrayOfObjects(20));
+
+      const flips = coinTosses(100);
+      console.log(flips);
+      const heads = headsCount(flips);
+      console.log(heads);
+      const tails = tailsCount(flips);
+      console.log(tails);
+      const stats = letterMap('foo bar bazz');
+      console.log(stats);
+      console.log(turnObjectToArray({ foo: 'bar', bazz: 42, quq: true }));
+      console.log(turnArrayToObject(turnObjectToArray({ foo: 'bar', bazz: 42, quq: true })));
+      const x = { foo: 'bar', foop: 'bazz', quq: 11 };
+      removeLongKeys(x);
+      console.log(x);
+
+      const numbers = [1, 2, 3, 4, 5];
+      const copy = [...numbers];
+      console.log(numbers === copy);
+
+      const foo = { bar: 'bazz' };
+      const fooCopy = {...foo };
+      console.log(foo === fooCopy);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

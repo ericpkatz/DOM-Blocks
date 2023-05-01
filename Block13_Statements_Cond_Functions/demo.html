@@ -1,62 +1,169 @@
 <html>
   <head>
     <script>
-      function headsTails(){
-        let rnd = Math.random();
-        rnd = Math.round(rnd);
-        if(rnd === 1){
-          return 'heads';
-        }
-        return 'tails';
-      }
 
-      function formatGuesses(guess1, guess2){
-        return `Your first guess was ${guess1} and your second guess was ${guess2}`;
-      }
+  // DEMO a statement
 
-      const oneToTen = ()=>{
-        const rnd = Math.random() * 10;
-        return Math.ceil(rnd);
-      }
+  /*
+  console.log('hello');
+  */
 
-      const square = (num) => {
-        return num * num;
-      };
+  // DEMO A conditional statement
 
-      const mult = (x, y)=> x * y;
+  /*
+  const foo = 'bar';
+  if(foo === 'bar'){
+    console.log('of course it does');
+  }
+  */
 
-      const combineWithDash = (a, b, c)=> {
-        return `${a}-${b}-${c}`;
-      };
+  // DEMO A function contains statements 
 
-      const range = (start, end)=> {
-        const diff = end - start;
-        const rnd = Math.random() * diff + start;
-        return Math.round(rnd);
-        
-      };
+  function aFunction(){
+    console.log('hello');
+  }
+  aFunction();
+  aFunction();
 
-      const guess1 = headsTails();
-      const guess2 = headsTails();
-      console.log(guess1);
-      console.log(guess2);
+  // DEMO a function can return values; 
+  /*
+  function aFunction(){
+    const foo = 'bar';
+    return foo;
+  }
+  console.log(aFunction());
+  */
 
-      console.log(formatGuesses(guess1, guess2));
-      console.log(formatGuesses(headsTails(), headsTails()));
+  // DEMO a function can accept values 
+  /*
+  function aFunction(b){
+    console.log(b);
+  }
+  aFunction('bar');
+  */
 
-      const pick1 = oneToTen();
-      console.log(pick1);
-      const pick2 = oneToTen();
-      console.log(mult(pick1, pick2));
-      console.log(square(pick1));
+  // DEMO a function can accept values and return values 
 
-      console.log(combineWithDash('a', 'b', 'c'));
-      console.log(combineWithDash('d', 'e', 'f'));
+  /*
+  function addition(a, b){
+    return a + b;
+  }
+  const sum = addition(3, 4);
+  console.log(sum);
+  */
 
-      console.log(range(3, 9));
-      console.log(range(5, 10));
-      console.log(range(1, 2));
-    </script>
+  // DEMO the prompt function lets us get a value 
+
+  /*
+  const value = prompt('enter a value');
+  console.log(value);
+  */
+
+  // DEMO get a value from the user and call a function
+
+  /*
+  function addTen(num){
+    return num + 10;
+  }
+  const value = prompt('enter a number');
+
+  console.log(addTen(value * 1));
+  */
+
+  // DEMO generate a random number between 1 and 3
+
+  /*
+  function rnd(){
+    let x = Math.random()*3;
+    x = Math.ceil(x);
+    return x;
+  }
+  console.log(rnd());
+  */
+
+  //DEMO generate a random number between 1 and another value 
+
+  /*
+  function rnd(limit){
+    let x = Math.random()*limit;
+    x = Math.ceil(x);
+    return x;
+  }
+  console.log(rnd(10));
+  */
+
+  //DEMO generate a random number between 1 and another value from the user
+
+  /*
+  function rnd(limit){
+    let x = Math.random()*limit;
+    x = Math.ceil(x);
+    return x;
+  }
+  const limit = prompt('enter a number');
+  console.log(rnd(limit*1));
+  */
+
+  //DEMO create the headsTails function 
+
+  /*
+  function headsTails(limit){
+    const x = Math.round(Math.random());
+    if(x === 0){
+      return 'heads';
+    }
+    else {
+      return 'tails';
+    }
+  }
+  console.log(headsTails());
+  */
+
+  //DEMO headsTails with a user guess 
+
+  /*
+  function headsTails(limit){
+    const x = Math.round(Math.random());
+    if(x === 0){
+      return 'heads';
+    }
+    else {
+      return 'tails';
+    }
+  }
+  const guess = prompt('guess heads or tails');
+  const result = headsTails();
+  if(guess === result){
+    console.log('correct');
+  }
+  else {
+    console.log(`nope it was ${result}`);
+  }
+  */
+
+  //DEMO connect with dashes
+
+  /*
+  function connectWithDashes(str){
+    return `${str}-${str}`;
+  }
+  const str = connectWithDashes('hello');
+  console.log(str);
+  */
+
+  //DEMO get value from the user to connect with dashes 
+
+  /*
+  function connectWithDashes(str){
+    return `${str}-${str}`;
+  }
+
+  const value = prompt('give me a value, I will connect it with dashes');
+  const str = connectWithDashes(value);
+  console.log(str);
+  */
+
+  </script>
   </head>
   <body>
   </body>

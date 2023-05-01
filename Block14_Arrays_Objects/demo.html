@@ -1,6 +1,7 @@
 <html>
   <head>
     <script>
+      /*
       const removeLongKeys = (obj)=> {
         for(let key in obj){
           if(key.length > 3){
@@ -125,6 +126,106 @@
       const foo = { bar: 'bazz' };
       const fooCopy = {...foo };
       console.log(foo === fooCopy);
+     */
+
+      // DEMO - an array is a collection of values which can be accessed by index
+
+      /*
+      const arr = [1, 2, 3];
+      console.log(arr);
+      console.log(arr[1]);
+      console.log(arr.length);
+      */
+
+      // DEMO - a function which tells us about an array 
+
+      /*
+      function arrayInfo(arr){
+        console.log(`the length of your array is ${ arr.length}`);
+        console.log(`the max index of your array is ${ arr.length - 1}`);
+        console.log(`the last element is ${ arr[arr.length - 1]}`);
+      }
+      const arr = [1, 3, 5, 7, 9];
+      arrayInfo(arr);
+     */
+
+    // DEMO - we can loop over an array 
+
+    /*
+    const arr = [1, 3, 5, 7, 9];
+    for(let i = 0; i < arr.length; i++){
+      console.log(arr[i]);
+    }
+    */
+
+    // DEMO - we can add a value to the end of an array 
+
+    /*
+    const arr = [1, 3, 5, 7, 9];
+    arr.push(10);
+    for(let i = 0; i < arr.length; i++){
+      console.log(arr[i]);
+    }
+    */
+
+    // DEMO - we can generate an array 
+
+    /*
+    const arr = [];
+    for(let i = 0; i < 25; i++){
+      arr.push(i);
+    }
+    console.log(arr);
+    */
+
+    // DEMO - we can generate an array of odd numbers 
+
+    /*
+    const arr = [];
+    for(let i = 0; i < 25; i++){
+      if(i % 2 === 1){
+        arr.push(i);
+      }
+    }
+    console.log(arr);
+    */
+
+    // DEMO - we can create a function which generates an array of odd numbers 
+
+    /*
+    function generateArray(limit){
+      const arr = [];
+      for(let i = 0; i < limit; i++){
+        if(i % 2 === 1){
+          arr.push(i);
+        }
+      }
+      return arr;
+    }
+
+    const arr = generateArray(100);
+    console.log(arr);
+    */
+
+    // DEMO - we can create a function which counts the odd or even numbers in an array 
+
+    function countOdds(arr){
+      let count = 0;
+      for(let i = 0; i < arr.length; i++){
+        if(arr[i] % 2 === 1){
+          count = count + 1;
+        }
+      }
+      return count;
+    }
+
+    const arr = [1, 2, 3];
+    console.log(countOdds(arr));
+    console.log(countOdds([2, 4, 6]));
+
+
+
+
     </script>
   </head>
   <body>

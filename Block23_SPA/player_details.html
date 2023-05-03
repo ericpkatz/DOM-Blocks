@@ -34,7 +34,11 @@
 
   const renderList = ()=> {
     const id = window.location.hash.slice(1)*1;
-    const html = players;
+    const html = players.map(player => {
+      return `<li class='${id === player.id ? 'selected': ''}'>
+        <a href='#${player.id === id ? '': player.id}'>${player.name}</a>
+      </li>`;
+    }).join('');
     document.querySelector('ul').innerHTML = html;
     renderDetails();
   };

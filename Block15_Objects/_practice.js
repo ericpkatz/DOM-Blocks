@@ -225,3 +225,23 @@ console.log(match);
 match = isMatch(obj, { bar: 42, bazz: true, q: 'x' });
 console.log(match);
 */
+
+// **********************
+//DEMO JSON (parsing and printing) 
+// **********************
+// **********************
+// Learning Objectives
+//  - JSON methods (parse and stringify) 
+// **********************
+
+const obj = { foo: 'bar', bazz: 42, quq: true}
+
+const str  = JSON.stringify(obj, null, 2);
+console.log(str);
+console.log(typeof str);
+
+const obj2 = JSON.parse('{"foo": "bar", "bazz": 42, "quq": true}');
+
+console.log(obj2);
+console.log(typeof obj2);
+

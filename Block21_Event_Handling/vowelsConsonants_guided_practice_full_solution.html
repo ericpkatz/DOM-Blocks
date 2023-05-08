@@ -51,30 +51,22 @@
     <h1 id='output'></h1>
     <h2 id="count">Vowels: 1 Consonants: 2</h2>
     <script>
-      let letters = [
-        {
-          character: 'a',
-          isVowel: true
-        },
-        {
-          character: 'b',
-          isVowel: false
-        },
-        {
-          character: 'c',
-          isVowel: false
-        },
-      ];
-      let vowelCount = 1;
-      let consonantCount = 2;
+      let letters = ['a','b','c'];
 
       const render = ()=> {
+        const vowels = 'aeiouy';
+        let vowelCount = 0;
+        let consonantCount = 0;
         const html = letters.map( letter => {
-          const letterType = letter.isVowel ? 'vowel' : 'consonant';
-
+          if(vowels.indexOf(letter) === -1){
+            consonantCount += 1;
+          }
+          else{
+            vowelCount += 1;
+          };
           return `
-            <span class=${letterType}>
-              ${ letter.character.toUpperCase() }
+            <span>
+              ${ letter.toUpperCase() }
             </span>
           `;
         }).join('');
@@ -89,23 +81,19 @@
       document.querySelector('#vowelForm').addEventListener('submit', (ev)=> {
         ev.preventDefault();
         const letter = ev.target.querySelector('select').value;
-        letters.push({character: letter, isVowel: true});
-        vowelCount++;
+        letters.push(letter);
         render();
       });
 
       document.querySelector('#consonantForm').addEventListener('submit', (ev)=> {
         ev.preventDefault();
         const letter = ev.target.querySelector('select').value;
-        letters.push({character: letter, isVowel: false});
-        consonantCount++;
+        letters.push(letter);
         render();
       });
 
       document.querySelector('#output').addEventListener('click', (ev) => {
         if(ev.target.tagName === 'SPAN'){
-          event.target.classList[0] === 'consonant' ? consonantCount-- : vowelCount--;
-          
           const idx = [...ev.target.parentNode.children].indexOf(ev.target);
           letters.splice(idx, 1);
           render();

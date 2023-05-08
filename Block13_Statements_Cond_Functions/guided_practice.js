@@ -7,8 +7,8 @@ function convertToMeters(yards){
 }
 
 function createMessage(yards, meters){
-        return `${yards} yards is ${ meters} meters.`;
-      };
+  return `${yards} yards is ${ meters} meters.`;
+};
 
 let yards = prompt('enter a number, we will convert that number from yards to meters');
 let meters = convertToMeters(yards);

@@ -149,7 +149,7 @@ function rnd(limit){
   return x;
 }
 console.log(rnd(10));
-console.log(rnd(10));
+console.log(rnd(100));
 */
 
 // ****************
@@ -169,7 +169,7 @@ console.log(rnd(limit*1));
 //DEMO create the headsTails function 
 // ****************
 /*
-function headsTails(limit){
+function headsTails(){
   const x = Math.round(Math.random());
   if(x === 0){
     return 'heads';
@@ -185,7 +185,7 @@ console.log(headsTails());
 //DEMO headsTails with a user guess 
 // ****************
 /*
-function headsTails(limit){
+function headsTails(){
   const x = Math.round(Math.random());
   if(x === 0){
     return 'heads';

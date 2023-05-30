@@ -9,10 +9,11 @@ User interfaces will be rendered from data which is fetched from another server 
 # Learning Objectives
 
 - Understanding the concept of single page applications
-- Understanding how a hash change can be used to determine what is displayed on a single page application. 
-- Creating a single page web application. 
+- Understanding how a hash change can be used to determine what is displayed on a single page application.
+- Creating a single page web application.
 
 # Slide Deck should include
+
 - The data to UI paradigm
 - SPA -> multiple views without reloading page
 - Change of the URL hash # -> change of view
@@ -21,7 +22,7 @@ User interfaces will be rendered from data which is fetched from another server 
 - Link -> changes hash -> changes view
 - Common Cases
   - List Detail -> show which items is selected and the detail
-  -  Search -> show results which 'match' search 
+  - Search -> show results which 'match' search
 - JSON -> stringify and parse (for displaying formatted json data)
 - Our examples make one fetch call, but multiple fetch calls could be made based on hash changes.
 

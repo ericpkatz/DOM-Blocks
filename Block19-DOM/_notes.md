@@ -15,8 +15,9 @@ User interfaces will change depending on underlying data. When the data changes,
 - Create a webpage with changing data, where the user interface changes as a result of the data changing.
 
 # Slide Deck should include
+
 - HTML -> user interface for web applications
-- HTML + JavaScript -> user interface for dynamic web application 
+- HTML + JavaScript -> user interface for dynamic web application
 - Document Object Model -> web api which enables JavaScript to change the UI
 - Reference DOM standardization, which standardizes the JavaScript developers need to write
 - Selection -> window.document.querySelector, window.document.querySelectorAll

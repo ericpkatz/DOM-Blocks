@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Block 20</title>
+    <title>Block 19</title>
     <style>
       ul {
         display: flex;
@@ -20,10 +20,6 @@
         background-color: green;
       }
 
-      .yellow { 
-        background-color: yellow;
-      }
-
       .sm {
         width: 25px;
         height: 25px;
@@ -38,22 +34,10 @@
         width: 75px;
         height: 75px;
       }
-
-      .xl {
-        width: 100px;
-        height: 100px;
-      }
-
-      .circle {
-        border-radius: 50%
-      }
     </style>
   </head>
   <body>
     <ul>
-    </ul>
-
-    <ul id="circles">
     </ul>
 
     <script>
@@ -73,21 +57,16 @@
           return `<div class='${square.color} ${square.size}'></div>`;
         }).join('');
         document.querySelector('ul').innerHTML = html;
-
-        const circleHtml = shapes.map(circle => {
-          return `<div class='${circle.color} ${circle.size} circle'></div>`;
-        }).join('');
-        document.querySelector('#circles').innerHTML = circleHtml;
       };
 
       render();
 
       const interval = setInterval(()=> {
-        const color = ['red', 'green', 'yellow'][Math.floor(Math.random() * 3)];
-        const size = ['sm', 'md', 'lg', 'xl'][Math.floor(Math.random() * 4)];
+        const color = ['red', 'green'][Math.floor(Math.random() * 2)];
+        const size = ['sm', 'md', 'lg'][Math.floor(Math.random() * 3)];
         shapes.push({ color, size });
         render();
-        if(shapes.length === 50){
+        if(shapes.length === 10){
           clearInterval(interval);
         }
         

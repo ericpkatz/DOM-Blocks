@@ -8,11 +8,11 @@ The data, which determines the user interface, will change based on the selectio
 
 # Learning Objectives
 
-- Understanding the role event handlers play in user interfaces. 
+- Understanding the role event handlers play in user interfaces
 - Adding event handlers to an HTML form to bypass to default form behavior
 - Adding event handlers to a parent container
 - Determining the index of a child element by using DOM traversal
-- Create a webpage where the UI is determined by an array of data, which can be modified using event handling. 
+- Create a webpage where the UI is determined by an array of data, which can be modified using event handling
 
 # Slide Deck should include
 
@@ -32,7 +32,6 @@ The data, which determines the user interface, will change based on the selectio
 - Node -> ev.target.querySelector allows us to find elements within the form (useful). Allows us to show that document or ev.target are both nodes.
 - Rendering - both classes and inline styles can be used (see oddsEvens.html)
 
-
 # Utilizes
 
 - forms
@@ -40,7 +39,7 @@ The data, which determines the user interface, will change based on the selectio
   - input
   - button
 - document.addEventListener
-- preventDefault() 
+- preventDefault()
 - DOM traversal
   - parentNode
   - children

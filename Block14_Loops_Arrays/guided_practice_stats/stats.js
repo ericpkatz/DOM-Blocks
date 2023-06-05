@@ -6,14 +6,14 @@ function stats(arr){
     total = total + arr[i];
     product = product * arr[i];
     if(max === undefined || arr[i] > max){
-            max = arr[i];
-          }
-        }
+      max = arr[i];
+    }
+  }
   const info = [];
   info.push(`the sum of your array is ${total}`);
   info.push(`the product of your array is ${product}`);
   info.push(`the maximum value of your array is ${max}`);
-  return info.join('\n\n')
+  return info.join('\n\n');
 }
 const txt = prompt('enter some numbers separated by commas', '1,2,3');
 const arr = txt.split(',');

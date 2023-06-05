@@ -8,14 +8,15 @@ Short prompts will be used to cover the underlying concepts followed by a demo w
 
 # Learning Objectives
 
-- Understanding the use case for arrays. 
-- How to access array elements. 
-- How to loop over an array. 
-- How to parse strings in order to create arrays 
+- Understanding the use case for arrays.
+- How to access array elements.
+- How to loop over an array.
+- How to parse strings in order to create arrays
 - How to modify an array
 - How to use the while loop to create or modify an array.
 
 # Slide Deck should include
+
 - an array is an ordered list of elements.
 - array elements can be accessed by index.
 - a for loop can be used to loop over an array.

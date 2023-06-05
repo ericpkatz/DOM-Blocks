@@ -3,7 +3,7 @@
 - Create two files named yards_meters.html and yards_meters.js and connect them using a script tag
 - Prompt the user to enter a number and store it in the variable inputYards
 - Define the convertToMeters function that takes in yards as a parameter and converts it to meters (multiplies the yards by .9144)
-- Convert the yards value that was input to meters using the convertToMeters() function
+- Convert the yards value that was input to meters using the convertToMeters function
 - Define the createMessage function that takes in yards and meters and returns a message based on the following. (Don't forget to convert the strings to numbers when necessary)
 - Create a message for the user using the createMessage function
 - Log the output to the console

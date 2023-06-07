@@ -132,6 +132,3 @@ f1.sayHi();
 const f2 = new Foo('bazz');
 f2.sayHi();
 */
-
-
-

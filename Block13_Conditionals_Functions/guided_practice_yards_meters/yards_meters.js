@@ -7,13 +7,13 @@ function createMessage(yards, meters){
   const numYards = yards * 1;
   
   if(numYards === 1760) {
-    message = `That's as long as a mile!`
+    message = 'Thats as long as a mile!'
   } else if(numYards === 100) {
-    message = `That's as long as a football field!`;
+    message = 'Thats as long as a football field!';
   } else if(numYards === 26) {
-    message = `That's as long as a tennis court!`;
+    message = 'Thats as long as a tennis court!';
   } else if(numYards === 1) {
-    message = `That's as long as a washing machine!`;
+    message = 'Thats as long as a washing machine!';
   }
 
   return `${yards} yards is ${ meters} meters. ${message}`;

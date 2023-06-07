@@ -11,7 +11,7 @@ function stats(arr){
 
   const info = [];
         info.push(`You entered ${arr.length} words`);
-        info.push(`The average lengthof your words is ${total / arr.length} words`);
+        info.push(`The average length of your words is ${total / arr.length} words`);
         info.push(`The longest word you entered has a length of ${ max.length }`);
   return info.join('\n\n');
 }

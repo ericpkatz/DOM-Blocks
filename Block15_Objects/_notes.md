@@ -7,6 +7,7 @@ Web Developers will often have to use and construct objects in order to engineer
 Short prompts will be used to cover the underlying concepts followed by a demo which utilizes several concepts which will be similar to the workshop prompt(s).
 
 # Learning Objectives
+
 - Understanding how to create objects
 - Getting and setting values of objects
 - Iterating over the keys of an object with a for in loop
@@ -15,8 +16,8 @@ Short prompts will be used to cover the underlying concepts followed by a demo w
 - Creating objects with functions
 - Modifying an object with functions
 
-
 # Slide Deck should include
+
 - arrays are objects
 - objects are objects
 - objects are made of keys and values

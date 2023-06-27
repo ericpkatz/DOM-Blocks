@@ -2,7 +2,7 @@
 Developers often use classes in order to make their code more manageable.
 
 # Overview
-Demo will use the prompt object to to get a string from the user. The string will be used to create a Sentence instance which will have methods added to it.
+Demo will use the prompt object to to get a string from the user. The string will be used to create a Sentence instance which will have methods added to it. The workshop minimal starter code and have them add methods to a class.
 
 # Learning Objectives
 - uses of the word this
